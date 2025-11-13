@@ -1,0 +1,1415 @@
+/* ============================
+    RESET BÁSICO
+   ============================ */
+a {
+    text-decoration: none;
+    /* Remove a linha de baixo de TODOS os links */
+    color: inherit;
+    /* Garante que links herdem a cor do pai */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ============================
+    CORES PRINCIPAIS
+   ============================ */
+:root {
+    --azul-escuro: #181a20;
+    --azul: #102d4a;
+    --amarelo: #f2b705;
+    --branco: #ffffff;
+    --cinza: #d1d1d1;
+}
+
+/* ============================
+    CABEÇALHO
+   ============================ */
+header {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #111;
+    z-index: 1000;
+}
+
+header nav a {
+    color: var(--branco);
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--amarelo);
+}
+
+body {
+    padding-top: 70px;
+    background-color: #fff;
+}
+
+/* ============================
+    HERO SECTION
+   ============================ */
+.hero {
+    position: relative;
+    background: url('../imagens/hero-bitcoin.png') center/cover no-repeat;
+    color: white;
+    padding: 120px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.hero h1,
+.hero p,
+.hero a {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 18px;
+    margin: 15px 0 25px;
+    color: #e0e0e0;
+}
+
+.hero a {
+    display: inline-block;
+    background: #f1b70e;
+    color: #000;
+    padding: 12px 26px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero a:hover {
+    background: #ffcc33;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 200, 50, 0.7);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #ffffff);
+    z-index: 1;
+}
+
+/* ============================
+    SEÇÃO SOBRE O BLOG
+   ============================ */
+.sobre {
+    padding: 80px 40px;
+    background-color: #fff;
+    color: #000;
+}
+
+.sobre h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.sobre p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* --- LAYOUT DE COLUNAS (Sobre Topo) --- */
+.sobre-topo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    /* Espaçamento entre as colunas */
+    max-width: 1100px;
+    /* Limita a largura total do bloco de colunas */
+    margin: 0 auto 80px auto;
+    /* Centraliza o bloco e adiciona espaço abaixo */
+    text-align: left;
+    /* Garante que o texto fique alinhado à esquerda na coluna */
+}
+
+.sobre-conteudo {
+    /* Define que esta coluna ocupará 55% do espaço */
+    flex: 0 0 55%;
+}
+
+.sobre-imagem {
+    /* Define que esta coluna ocupará 35% do espaço */
+    flex: 0 0 35%;
+    /* Centraliza a imagem na coluna */
+    text-align: center;
+}
+
+.sobre-imagem img {
+    /* Garante que a imagem não ultrapasse sua coluna */
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Borda suave */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- BLOCO DE BENEFÍCIOS (Cards) --- */
+.beneficios-container {
+    text-align: center;
+    padding-top: 40px;
+    /* Espaço acima dos cards */
+}
+
+.beneficios-container h3 {
+    font-size: 28px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.beneficios-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Quebra para a próxima linha se não houver espaço */
+    gap: 30px;
+    /* Espaçamento entre os cards */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beneficio-card {
+    background-color: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    width: calc(25% - 30px);
+    /* 4 cards por linha (ajusta pela largura e gap) */
+    min-width: 200px;
+    /* Garante que o card não fique muito estreito */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.beneficio-card i {
+    font-size: 36px;
+    color: var(--amarelo);
+    /* Usa a cor amarela definida na sua raiz */
+    margin-bottom: 15px;
+}
+
+.beneficio-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.beneficio-card p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* --- RESPONSIVIDADE ADICIONAL --- */
+@media (max-width: 1000px) {
+
+    /* Em telas menores, o bloco "Sobre o Blog" volta para uma coluna */
+    .sobre-topo {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .sobre-conteudo,
+    .sobre-imagem {
+        flex: 1 1 100%;
+        /* Ocupa a largura total */
+    }
+
+    .sobre-conteudo {
+        order: 2;
+        /* Coloca o texto depois da imagem (opcional) */
+    }
+
+    .sobre-imagem {
+        order: 1;
+        /* Coloca a imagem primeiro (opcional) */
+    }
+
+    .beneficio-card {
+        width: calc(50% - 30px);
+        /* 2 cards por linha */
+    }
+}
+
+@media (max-width: 600px) {
+    .beneficio-card {
+        width: 100%;
+        /* 1 card por linha */
+    }
+}
+
+/* ============================
+   SEÇÃO: CONTEÚDOS EM DESTAQUE
+   ============================ */
+.destaques {
+    background: linear-gradient(180deg, #101010 0%, #0c0c0c 100%);
+    text-align: center;
+    padding: 70px 40px;
+    color: var(--branco);
+}
+
+.destaques h2 {
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+
+.destaques-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* ============================
+   SEÇÃO: CONTEÚDOS EM DESTAQUE
+   ============================ */
+
+/* ... (continuação do bloco) ... */
+
+.destaque-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--branco);
+    /* Garante o contraste */
+}
+
+.destaque-card p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #e0e0e0;
+    /* Cinza claro para descrição */
+}
+
+/* Remover sublinhado padrão dos links DENTRO DOS CARDS DE DESTAQUE */
+/* Se houver algum 'text-decoration: underline;' no .destaque-card ou no a dentro dele, remova-o. */
+.destaque-card {
+    background: #181818;
+    border-radius: 15px;
+    padding: 25px;
+    width: 320px;
+    /* Mantém a largura atual */
+    text-decoration: none;
+    color: var(--branco);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* Adicionado: Para posicionar o ::after */
+    overflow: hidden;
+    /* Adicionado: Para que a linha "saia" de dentro */
+}
+
+/* Efeito ao passar o mouse (hover) */
+.destaque-card:hover {
+    transform: translateY(-8px);
+    /* box-shadow: 0 0 20px rgba(0, 153, 255, 0.6); <-- Você pode manter esta sombra ou usar a nova borda*/
+    box-shadow: 0 0 20px var(--amarelo);
+    /* Sombra mais consistente com o tema */
+}
+
+.destaque-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    /* Altura da linha interativa */
+    background: var(--amarelo);
+    /* Cor da linha */
+    transform: scaleX(0);
+    /* Começa escondida */
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.destaque-card:hover::after {
+    transform: scaleX(1);
+    /* Expande ao passar o mouse */
+    transform-origin: bottom left;
+}
+
+/* ESTILO NOVO: Ícones dos Destaques (Substituindo a imagem) */
+.destaque-card i {
+    font-size: 50px;
+    /* Tamanho do ícone */
+    margin-bottom: 20px;
+    height: 100px;
+    /* Mantém o mesmo espaço que a imagem ocupava */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Cores dos Ícones de Destaque */
+.icon-cripto {
+    color: #ffcc33;
+    /* Amarelo/Dourado */
+}
+
+.icon-invest {
+    color: #00bcd4;
+    /* Ciano/Azul Claro */
+}
+
+.icon-educacao {
+    color: #4caf50;
+    /* Verde */
+}
+
+/* ============================
+   SEÇÃO: PRINCIPAIS CRIPTOMOEDAS
+   ============================ */
+.crypto-section {
+    background: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+    padding: 60px 40px;
+    text-align: center;
+    color: var(--branco);
+}
+
+.crypto-section h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.criptos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.crypto-card {
+    background: var(--azul-escuro);
+    border-radius: 12px;
+    padding: 25px;
+    width: 22%;
+    min-width: 240px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeUp 0.8s ease forwards;
+    color: var(--branco);
+    text-align: center;
+}
+
+.crypto-card img {
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+.crypto-card h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.crypto-card p {
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.crypto-card:hover {
+    transform: translateY(-8px);
+}
+
+/* Brilho colorido por moeda */
+.bitcoin:hover {
+    box-shadow: 0 0 20px #f7931a;
+}
+
+.ethereum:hover {
+    box-shadow: 0 0 20px #3c3c3d;
+}
+
+.solana:hover {
+    box-shadow: 0 0 20px #14f195;
+}
+
+.cardano:hover {
+    box-shadow: 0 0 20px #3cc8c8;
+}
+
+/* Preços e variação */
+.price {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.up {
+    color: #0f0;
+    font-weight: bold;
+}
+
+.down {
+    color: #f00;
+    font-weight: bold;
+}
+
+/* ============================
+    RODAPÉ
+   ============================ */
+footer {
+    background: var(--azul-escuro);
+    color: var(--branco);
+    text-align: center;
+    padding: 25px;
+}
+
+/* ============================
+    MELHORIAS E RESPONSIVIDADE
+   ============================ */
+section {
+    scroll-margin-top: 100px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .destaques-container,
+    .criptos-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .crypto-card,
+    .destaque-card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+}
+
+/* ============================
+    BANNER DE PÁGINAS (page-hero)
+    ============================ */
+/* O .hero já existe, mas vamos sobrescrever o padding e altura apenas para este caso,
+   usando a classe auxiliar 'page-hero' que adicionamos no HTML. */
+.page-hero {
+    /* Altura menor que o hero da home (500px) */
+    height: 350px;
+    padding: 100px 40px;
+    margin-bottom: 60px;
+    /* Espaço abaixo do banner */
+
+    /* Ajuste para que a imagem do background-image: url(...) no HTML
+       fique mais escura, como o hero principal */
+    background-size: cover;
+    /* Garante que a imagem cubra */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Garante o fundo escuro para o banner de página, já que o ::before 
+   do .hero original tem um background-image diferente */
+.page-hero::before {
+    background: rgba(0, 0, 0, 0.55);
+    /* Um pouco mais escuro para destaque */
+    /* Remove a transição suave de baixo para o corpo */
+    content: "";
+}
+
+/* Remove a transição suave de baixo, se a imagem for diferente */
+.page-hero::after {
+    display: none;
+}
+
+/* ============================
+    SEÇÃO DE CONTEÚDO PRINCIPAL (section-investimentos)
+    ============================ */
+.section-investimentos {
+    padding: 40px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-investimentos h2 {
+    font-size: 38px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- CARDS DE INVESTIMENTO --- */
+.investimento-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.investimento-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    width: calc(33.333% - 30px);
+    /* 3 cards por linha */
+    min-width: 280px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.investimento-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.investimento-card i {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Cores específicas para os ícones */
+.icon-poupanca {
+    color: #8bc34a;
+    /* Verde Claro */
+}
+
+.icon-tesouro {
+    color: #2196f3;
+    /* Azul Forte */
+}
+
+.icon-renda-fixa {
+    color: #ff9800;
+    /* Laranja */
+}
+
+.icon-acoes {
+    color: #f44336;
+    /* Vermelho */
+}
+
+.icon-cripto {
+    color: var(--amarelo);
+    /* Amarelo da paleta */
+}
+
+.investimento-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.investimento-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.investimento-card .caracteristicas {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.investimento-card .caracteristicas li {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.investimento-card .caracteristicas li i {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.investimento-card .caracteristicas li .fa-check-circle {
+    color: #4CAF50;
+    /* Verde para checks */
+}
+
+.investimento-card .caracteristicas li .fa-times-circle {
+    color: #F44336;
+    /* Vermelho para X's */
+}
+
+
+/* ============================
+    SEÇÃO "COMO COMEÇAR A INVESTIR" (como-investir-section)
+    ============================ */
+.como-investir-section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 60px auto;
+    background-color: #fdfdfd;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.como-investir-section h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.investir-passos {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.investir-passos li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.investir-passos li:hover {
+    transform: translateX(10px);
+}
+
+.passo-icon {
+    font-size: 32px;
+    color: var(--amarelo);
+    margin-right: 20px;
+    flex-shrink: 0;
+    padding-top: 5px;
+}
+
+.passo-conteudo h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.passo-conteudo p {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* ============================
+    AJUSTES DE RESPONSIVIDADE (ADICIONAIS)
+    ============================ */
+
+@media (max-width: 992px) {
+    .investimento-card {
+        width: calc(50% - 30px);
+        /* 2 cards por linha */
+    }
+
+    .page-hero h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Sobrescreve a regra existente para melhor alinhamento do card */
+    .investimento-card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .page-hero {
+        padding: 80px 20px;
+        height: 300px;
+    }
+
+    .page-hero h1 {
+        font-size: 36px;
+    }
+
+    .page-hero p {
+        font-size: 18px;
+    }
+
+    /* Lista de passos ocupa 100% da largura em mobile */
+    .investir-passos li {
+        padding: 15px;
+    }
+}
+
+/* ============================
+    SEÇÃO DE EDUCAÇÃO FINANCEIRA (CONCEITOS)
+    ============================ */
+
+.section-educacao {
+    padding: 40px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-educacao h2 {
+    font-size: 38px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.conceitos-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.conceito-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    width: calc(25% - 30px);
+    /* 4 cards por linha */
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.conceito-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.conceito-card i {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* Cores específicas para os ícones */
+.icon-conceito-1 {
+    color: #2196f3;
+    /* Azul */
+}
+
+.icon-conceito-2 {
+    color: #4CAF50;
+    /* Verde */
+}
+
+.icon-conceito-3 {
+    color: #f2b705;
+    /* Amarelo (Paleta) */
+}
+
+.icon-conceito-4 {
+    color: #ff9800;
+    /* Laranja */
+}
+
+.conceito-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 600;
+}
+
+.conceito-card p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.conceito-card .dicas {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.conceito-card .dicas li {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.conceito-card .dicas li i {
+    font-size: 14px;
+    margin-right: 8px;
+    color: #f2b705;
+    /* Amarelo */
+}
+
+
+/* --- RESPONSIVIDADE para Cards de Conceitos --- */
+@media (max-width: 1100px) {
+    .conceito-card {
+        width: calc(50% - 30px);
+        /* 2 cards por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .conceito-card {
+        width: 90%;
+        /* 1 card por linha */
+        max-width: 400px;
+    }
+}
+
+/* --- AJUSTE NA SEÇÃO DE PASSOS --- */
+.estrategias-section {
+    box-shadow: 0 5px 20px rgba(255, 193, 7, 0.1);
+    /* Sutilmente mais vibrante */
+}
+
+/* ============================
+    SEÇÃO DE CONTATOS
+    ============================ */
+
+.section-contato {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.contato-container {
+    display: flex;
+    gap: 50px;
+    /* Espaço entre as duas colunas */
+    background-color: #f7f7f7;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+}
+
+.contato-info,
+.contato-formulario {
+    flex: 1;
+    /* Ambas as colunas ocupam a mesma largura */
+}
+
+.section-contato h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* --- Coluna de Informações (Esquerda) --- */
+
+.info-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.lista-contato {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.lista-contato li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #444;
+}
+
+.lista-contato li i {
+    font-size: 20px;
+    color: var(--amarelo);
+    /* Cor amarela */
+    margin-right: 15px;
+    width: 25px;
+    /* Garante alinhamento */
+    text-align: center;
+}
+
+.lista-contato li a,
+.lista-contato li span {
+    text-decoration: none;
+    color: #444;
+    transition: color 0.3s;
+}
+
+.lista-contato li a:hover {
+    color: var(--amarelo);
+}
+
+/* --- Redes Sociais --- */
+.redes-sociais h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.social-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    font-size: 20px;
+    margin-right: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    background-color: var(--amarelo);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* --- Coluna do Formulário (Direita) --- */
+
+.form-alerta {
+    color: #f44336;
+    /* Vermelho */
+    font-size: 14px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* Inclui padding e border na largura total */
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--amarelo);
+    outline: none;
+}
+
+.btn-enviar {
+    background-color: var(--amarelo);
+    color: #000;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: #ffcc33;
+    transform: translateY(-2px);
+}
+
+/* ============================
+    RESPONSIVIDADE para Contatos
+    ============================ */
+
+@media (max-width: 850px) {
+    .contato-container {
+        flex-direction: column;
+        /* Colunas viram linhas em telas menores */
+        padding: 30px;
+    }
+
+    .contato-info {
+        margin-bottom: 30px;
+    }
+}
+
+/* ============================
+    SEÇÃO "O QUE É BLOCKCHAIN?"
+    ============================ */
+.section-blockchain {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+.section-blockchain h2 {
+    font-size: 38px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Reutilizando section-description que já existe */
+.section-blockchain .section-description {
+    text-align: left;
+    /* Ajusta o texto para alinhar à esquerda */
+    margin-bottom: 25px;
+}
+
+
+/* ============================
+    SEÇÃO "PRINCIPAIS CRIPTOMOEDAS" (DETALHES)
+    ============================ */
+.section-principais-criptos {
+    padding: 40px 20px 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-principais-criptos h2 {
+    font-size: 38px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.cripto-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.cripto-detail-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 30px;
+    width: calc(25% - 30px);
+    /* 4 cards por linha */
+    min-width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.cripto-detail-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.cripto-detail-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.cripto-detail-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.cripto-detail-card .short-desc {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    display: block;
+    /* Garante que é visível por padrão */
+}
+
+.cripto-detail-card .full-desc {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 15px;
+    display: none;
+    /* Escondido por padrão */
+}
+
+.cripto-detail-card .toggle-desc {
+    background-color: var(--amarelo);
+    color: #000;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cripto-detail-card .toggle-desc:hover {
+    background-color: #ffcc33;
+}
+
+
+/* ============================
+    SEÇÃO COMPARATIVO (RISCOS E VANTAGENS)
+    ============================ */
+.section-comparativo {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.section-comparativo h2 {
+    font-size: 38px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Contêiner Flex para as duas colunas */
+.comparativo-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.coluna-comparativo {
+    flex: 1;
+    /* Garante que as duas colunas tenham a mesma largura */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- ESTILO COLUNA RISCOS (Alerta: Vermelho) --- */
+.coluna-riscos {
+    background-color: #fff3f3;
+    border: 1px solid #f44336;
+}
+
+.coluna-riscos h3 {
+    color: #f44336;
+    /* Vermelho forte */
+}
+
+/* --- ESTILO COLUNA VANTAGENS (Sucesso: Verde) --- */
+.coluna-vantagens {
+    background-color: #f3fff6;
+    border: 1px solid #4CAF50;
+}
+
+.coluna-vantagens h3 {
+    color: #4CAF50;
+    /* Verde forte */
+}
+
+
+/* --- Estilo Comum para as Colunas e Listas --- */
+.coluna-comparativo h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid;
+    /* A cor da borda será herdada do pai (vermelho ou verde) */
+    padding-bottom: 10px;
+}
+
+.coluna-comparativo h3 i {
+    margin-right: 10px;
+}
+
+.lista-comparativo {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.lista-comparativo li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.item-icon {
+    font-size: 32px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    padding-top: 5px;
+    width: 35px;
+    text-align: center;
+}
+
+.item-conteudo h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.item-conteudo p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Cores dos Ícones */
+.coluna-riscos .item-icon i {
+    color: #f44336;
+    /* Vermelho para Riscos */
+}
+
+.coluna-vantagens .item-icon i {
+    color: #4CAF50;
+    /* Verde para Vantagens */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 900px) {
+    .comparativo-container {
+        flex-direction: column;
+        /* Colunas viram linhas em telas menores (uma em cima da outra) */
+    }
+
+    .coluna-comparativo {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* ============================
+    RESPONSIVIDADE para Criptomoedas
+    ============================ */
+@media (max-width: 1100px) {
+    .cripto-detail-card {
+        width: calc(50% - 30px);
+        /* 2 cards por linha */
+    }
+}
+
+@media (max-width: 768px) {
+    .cripto-detail-card {
+        width: 90%;
+        /* 1 card por linha */
+        max-width: 400px;
+    }
+
+    .section-blockchain .section-description {
+        text-align: center;
+        /* Centraliza em telas pequenas */
+    }
+}
