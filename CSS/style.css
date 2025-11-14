@@ -485,6 +485,11 @@ body {
 }
 
 /* Preços e variação */
+
+.change {
+    font-size: 0.9em;
+}
+
 .price {
     font-size: 14px;
     margin-top: 8px;
