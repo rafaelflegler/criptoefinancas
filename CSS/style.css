@@ -424,6 +424,29 @@ body {
     color: var(--branco);
 }
 
+.barra-realtime {
+    background: #0a84ff;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto 15px auto;
+}
+.barra-realtime-container {
+    text-align: center;
+}
+.status-dot {
+    width: 15px;
+    height: 15px;
+    background: #00ff74;
+    border-radius: 100%;
+}
+
+
+
 .crypto-section h2 {
     font-size: 36px;
     margin-bottom: 40px;
@@ -459,9 +482,9 @@ body {
 }
 
 .crypto-card p {
-    font-size: 15px;
-    margin-top: 5px;
+    margin: 6px 0;
 }
+
 
 .crypto-card:hover {
     transform: translateY(-8px);
@@ -487,12 +510,12 @@ body {
 /* Preços e variação */
 
 .change {
-    font-size: 0.9em;
+    font-size: 1.0em;
 }
 
 .price {
-    font-size: 14px;
-    margin-top: 8px;
+    font-size: 20px;
+    margin-top: 6px;
 }
 
 .up {
@@ -556,11 +579,14 @@ section {
         align-items: center;
     }
 
-    .crypto-card,
-    .destaque-card {
-        width: 90%;
-        max-width: 350px;
+    .crypto-card {
+        min-height: 250px;
+        /* Ajuste se quiser mais ou menos altura */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
+
 
     .hero h1 {
         font-size: 36px;
